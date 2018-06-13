@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 describe 'navigate' do
   before do
     @post = Post.create(title: "My Post", description: "My post desc")
@@ -15,7 +14,7 @@ describe 'navigate' do
     expect(page).to have_css("h1", text: "My Post")
   end
 
-  it 'shows the description on the show page in a p tag' do
+  it 'shows the description of the show page in a p tag' do
     visit "/posts/#{@post.id}"
     expect(page).to have_css("p", text: "My post desc")
   end
